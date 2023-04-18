@@ -67,6 +67,8 @@ btnTinhDT.onclick = function () {
 /**
  * Đầu vào:
  * - Tạo 2 biến để xác định: số hàng chục và số hàng đơn vị
+ * - Xác định số hàng đơn vị = % 10
+ * - Xác định số hàng chục = Math.floor( / 10)
  * Xử lý: 
  * - Tính tổng 2 ký số = số hàng chục + số hàng đơn vị
  * Đầu ra:
@@ -75,14 +77,10 @@ btnTinhDT.onclick = function () {
 var total = document.getElementById('total');
 total.onclick = function () {
     var so = document.getElementById('so').value*1;
-    // var dvDonVi = so % 10;
-    var dvChuc = so / 10;
-console.log(dvChuc);
+    var dvDonVi = so % 10;
+    var dvChuc = Math.floor(so / 10) ;
+    var tongKySo = dvChuc + dvDonVi;
+    document.getElementById('tongCong').innerHTML = ('Tổng ký số là: ') + tongKySo;
 }
-
-// var so = document.getElementById('so').value*1;
-// var dvChuc = so % 10;
-// console.log(dvChuc);
-
 
 
